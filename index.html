@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Formatter - Форматирование JSON</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="icon">⚡</span>
+                JSON Formatter
+            </h1>
+            <p class="subtitle">Форматирование и валидация JSON с подсветкой ошибок</p>
+        </header>
+
+        <main class="main">
+            <div class="top-controls">
+                <div class="controls">
+                    <div class="format-controls">
+                        <button id="formatBtn" class="btn btn-primary">
+                            <span class="btn-icon">✨</span>
+                            Форматировать
+                        </button>
+                        <button id="copyBtn" class="btn btn-outline">
+                            <span class="btn-icon">📋</span>
+                            Копировать
+                        </button>
+                        <button id="clearBtn" class="btn btn-outline">
+                            <span class="btn-icon">🗑️</span>
+                            Очистить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="examples">
+                    <h3>Примеры JSON:</h3>
+                    <div class="example-buttons">
+                        <button class="example-btn" data-example="simple">Простой объект</button>
+                        <button class="example-btn" data-example="nested">Вложенные объекты</button>
+                        <button class="example-btn" data-example="array">Массивы</button>
+                        <button class="example-btn" data-example="complex">Сложная структура</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editor-container">
+                <div class="json-editor-section">
+                    <label for="jsonEditor">JSON код:</label>
+                    <div class="editor-wrapper">
+                        <div class="line-numbers" id="lineNumbers"></div>
+                        <div class="editor-content">
+                            <pre id="jsonEditor" contenteditable="true" spellcheck="false"><code class="language-json"></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Создано с ❤️ для разработчиков</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent-primary: #00d4ff;
+    --accent-secondary: #ff6b6b;
+    --border-color: #333333;
+    --success-color: #00ff88;
+    --warning-color: #ffaa00;
+    --error-color: #ff4757;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1a2e 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px 0;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icon {
+    font-size: 2rem;
+    -webkit-text-fill-color: var(--accent-primary);
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* Main Content */
+.main {
+    flex: 1;
+}
+
+/* Top Controls */
+.top-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.format-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary), #0099cc);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.btn-icon {
+    font-size: 16px;
+}
+
+/* Examples */
+.examples {
+    background: var(--bg-secondary);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.examples h3 {
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.example-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.example-btn {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.example-btn:hover {
+    background: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+/* Editor Container */
+.editor-container {
+    margin-bottom: 20px;
+}
+
+.json-editor-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.json-editor-section label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.editor-wrapper {
+    display: flex;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 500px;
+}
+
+/* Line Numbers */
+.line-numbers {
+    background: var(--bg-tertiary);
+    border-right: 1px solid var(--border-color);
+    padding: 0.7px 10px 20px 10px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: right;
+    min-width: 50px;
+    user-select: none;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.line-number {
+    padding: 0 5px;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 30px;
+}
+
+.line-number.error {
+    color: var(--error-color);
+    background: rgba(255, 71, 87, 0.1);
+    border-radius: 3px;
+}
+
+/* Editor Content */
+.editor-content {
+    flex: 1;
+    overflow: auto;
+}
+
+#jsonEditor {
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: 0;
+    padding: 20px;
+    min-height: 500px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    outline: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: var(--text-primary);
+}
+
+#jsonEditor:focus {
+    outline: none;
+}
+
+#jsonEditor code {
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: inherit !important;
+}
+
+/* Error Highlighting */
+.json-error-line {
+    background: rgba(255, 71, 87, 0.1) !important;
+    border-left: 3px solid var(--error-color) !important;
+    padding-left: 10px !important;
+}
+
+.json-error-char {
+    background: rgba(255, 71, 87, 0.3) !important;
+    color: var(--error-color) !important;
+    border-radius: 2px;
+    padding: 1px 2px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-top: auto;
+}
+
+/* Notifications */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.success {
+    background: var(--success-color);
+}
+
+.notification.error {
+    background: var(--error-color);
+}
+
+.notification.warning {
+    background: var(--warning-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .top-controls {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .format-controls {
+        justify-content: center;
+    }
+    
+    .example-buttons {
+        justify-content: center;
+    }
+    
+    .line-numbers {
+        min-width: 40px;
+        padding: 20px 5px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .format-controls {
+        flex-direction: column;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
+}
+
+/* Prism.js Overrides */
+pre[class*="language-"] {
+    background: var(--bg-secondary) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+code[class*="language-"] {
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
