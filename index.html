@@ -20,23 +20,6 @@
 
         <main class="main">
             <div class="top-controls">
-                <div class="controls">
-                    <div class="format-controls">
-                        <button id="formatBtn" class="btn btn-primary">
-                            <span class="btn-icon">✨</span>
-                            Форматировать
-                        </button>
-                        <button id="copyBtn" class="btn btn-outline">
-                            <span class="btn-icon">📋</span>
-                            Копировать
-                        </button>
-                        <button id="clearBtn" class="btn btn-outline">
-                            <span class="btn-icon">🗑️</span>
-                            Очистить
-                        </button>
-                    </div>
-                </div>
-
                 <div class="examples">
                     <h3>Примеры JSON:</h3>
                     <div class="example-buttons">
@@ -54,6 +37,17 @@
                     <div class="editor-wrapper">
                         <div class="line-numbers" id="lineNumbers"></div>
                         <div class="editor-content">
+                            <div class="editor-toolbar">
+                                <button id="formatBtn" class="toolbar-btn" title="Форматировать">
+                                    <span class="toolbar-icon">Format</span>
+                                </button>
+                                <button id="copyBtn" class="toolbar-btn" title="Копировать">
+                                    <span class="toolbar-icon">📋</span>
+                                </button>
+                                <button id="clearBtn" class="toolbar-btn" title="Очистить">
+                                    <span class="toolbar-icon">🗑️</span>
+                                </button>
+                            </div>
                             <pre id="jsonEditor" contenteditable="true" spellcheck="false"><code class="language-json"></code></pre>
                         </div>
                     </div>
